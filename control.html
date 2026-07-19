@@ -3,20 +3,23 @@
 
 <head>
 
-<title>DM Control</title>
+<title>D&D Control Panel</title>
 
 <style>
 
-body{
-    font-family:Arial;
-    margin:40px;
+body {
+    font-family: Arial;
+    background: #222;
+    color: white;
+    text-align: center;
 }
 
-button{
-    width:220px;
-    height:70px;
-    font-size:22px;
-    margin:10px;
+button {
+    width: 220px;
+    height: 80px;
+    font-size: 24px;
+    margin: 15px;
+    cursor: pointer;
 }
 
 </style>
@@ -25,21 +28,59 @@ button{
 
 <body>
 
-<h1>D&D Control Panel</h1>
+<h1>Dungeon Master Control</h1>
 
-<p>This is Version 1.</p>
-
-<button onclick="alert('Coming next!')">
-Forest
+<button onclick="changeScene('https://picsum.photos/1200/800?1')">
+🌲 Forest
 </button>
 
-<button onclick="alert('Coming next!')">
-Goblin
+<button onclick="changeScene('https://picsum.photos/1200/800?2')">
+👹 Goblin
 </button>
 
-<button onclick="alert('Coming next!')">
-Dragon
+<button onclick="changeScene('https://picsum.photos/1200/800?3')">
+🐉 Dragon
 </button>
+
+
+<script type="module">
+
+import { initializeApp } 
+from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+
+import { getDatabase, ref, set }
+from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
+
+
+const firebaseConfig = {
+  apiKey: "AIzaSyCLJeRx8QhjZFvtZoJuuPzSQlg6Vebf9lA",
+  authDomain: "dnd-display.firebaseapp.com",
+  databaseURL: "https://dnd-display-default-rtdb.europe-west1.firebasedatabase.app",
+  projectId: "dnd-display",
+  storageBucket: "dnd-display.firebasestorage.app",
+  messagingSenderId: "975109810443",
+  appId: "1:975109810443:web:5f47e4bf2c6e71de9c1a0e"
+};
+
+
+const app = initializeApp(firebaseConfig);
+
+const database = getDatabase(app);
+
+
+function changeScene(image){
+
+    set(
+        ref(database, "currentScene"),
+        image
+    );
+
+}
+
+window.changeScene = changeScene;
+
+
+</script>
 
 </body>
 
