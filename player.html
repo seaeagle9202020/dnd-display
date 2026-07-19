@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Player Display</title>
+<title>D&D Player Display</title>
 
 <style>
-body{
-    margin:0;
-    background:black;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    height:100vh;
+body {
+    margin: 0;
+    background: black;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-img{
-    max-width:100%;
-    max-height:100%;
-    object-fit:contain;
+img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
 }
 </style>
 
@@ -26,21 +26,41 @@ img{
 
 <img id="scene" src="https://picsum.photos/1200/800">
 
-<script>
+<script type="module">
 
-async function refresh(){
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
 
-    let response=await fetch("scene.txt?"+Date.now());
+import { getDatabase, ref, onValue }
+from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
 
-    let image=await response.text();
 
-    document.getElementById("scene").src=image.trim();
+const firebaseConfig = {
+  apiKey: "AIzaSyCLJeRx8QhjZFvtZoJuuPzSQlg6Vebf9lA",
+  authDomain: "dnd-display.firebaseapp.com",
+  databaseURL: "https://dnd-display-default-rtdb.europe-west1.firebasedatabase.app",
+  projectId: "dnd-display",
+  storageBucket: "dnd-display.firebasestorage.app",
+  messagingSenderId: "975109810443",
+  appId: "1:975109810443:web:5f47e4bf2c6e71de9c1a0e"
+};
 
-}
 
-refresh();
+const app = initializeApp(firebaseConfig);
 
-setInterval(refresh,1000);
+const database = getDatabase(app);
+
+const sceneRef = ref(database, "currentScene");
+
+
+onValue(sceneRef, (snapshot) => {
+
+    const image = snapshot.val();
+
+    if(image){
+        document.getElementById("scene").src = image;
+    }
+
+});
 
 </script>
 
