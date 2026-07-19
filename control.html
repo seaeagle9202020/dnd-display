@@ -2,7 +2,6 @@
 <html>
 
 <head>
-
 <title>D&D Control Panel</title>
 
 <style>
@@ -14,11 +13,19 @@ body {
     text-align: center;
 }
 
+h1 {
+    font-size: 40px;
+}
+
+.category {
+    margin-top: 30px;
+}
+
 button {
-    width: 220px;
-    height: 80px;
-    font-size: 24px;
-    margin: 15px;
+    width: 200px;
+    height: 70px;
+    font-size: 22px;
+    margin: 10px;
     cursor: pointer;
 }
 
@@ -30,17 +37,40 @@ button {
 
 <h1>Dungeon Master Control</h1>
 
-<button onclick="changeScene('images/swordcoast_map.jpg')">
-Sword Coast Map
+
+<div class="category">
+
+<h2>🏰 Locations</h2>
+
+<button onclick="changeScene('images/tavern.jpg')">
+🍺 Tavern
 </button>
 
-<button onclick="changeScene('https://picsum.photos/1200/800?2')">
+<button onclick="changeScene('images/forest.jpg')">
+🌲 Forest
+</button>
+
+<button onclick="changeScene('images/castle.jpg')">
+🏰 Castle
+</button>
+
+</div>
+
+
+<div class="category">
+
+<h2>👹 Creatures</h2>
+
+<button onclick="changeScene('images/goblin.jpg')">
 👹 Goblin
 </button>
 
-<button onclick="changeScene('https://picsum.photos/1200/800?3')">
+<button onclick="changeScene('images/dragon.jpg')">
 🐉 Dragon
 </button>
+
+</div>
+
 
 
 <script type="module">
@@ -81,6 +111,7 @@ window.changeScene = changeScene;
 
 
 </script>
+
 
 </body>
 
