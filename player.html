@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Player Display</title>
+
+<style>
+body{
+    margin:0;
+    background:black;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+img{
+    max-width:100%;
+    max-height:100%;
+    object-fit:contain;
+}
+</style>
+
+</head>
+
+<body>
+
+<img id="scene" src="https://picsum.photos/1200/800">
+
+<script>
+
+async function refresh(){
+
+    let response=await fetch("scene.txt?"+Date.now());
+
+    let image=await response.text();
+
+    document.getElementById("scene").src=image.trim();
+
+}
+
+refresh();
+
+setInterval(refresh,1000);
+
+</script>
+
+</body>
+</html>
