@@ -5,6 +5,39 @@
 <title>D&D Control Panel</title>
 
 <style>
+.notes {
+
+background: #333;
+
+padding: 12px;
+
+border-radius: 8px;
+
+margin-bottom: 20px;
+
+text-align: left;
+
+max-width: 900px;
+
+margin-left: auto;
+
+margin-right: auto;
+
+}
+
+.notes ul {
+
+margin: 0;
+
+padding-left: 20px;
+
+}
+
+.notes li {
+
+margin-bottom: 8px;
+
+}
 
 body {
     font-family: Arial;
@@ -29,6 +62,59 @@ button {
     cursor: pointer;
 }
 
+table {
+    width: 90%;
+    margin: auto;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid white;
+    padding: 8px;
+}
+
+th {
+    text-align: center;
+}
+
+td {
+    text-align: left;
+}
+
+details {
+    background: #222;
+    margin: 10px auto;
+    padding: 10px;
+    border-radius: 8px;
+    max-width: 900px;
+}
+
+summary {
+    cursor: pointer;
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: 8px;
+}
+
+details details {
+    background: #333;
+}
+
+.scene-button {
+    background: #444;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    margin: 8px;
+    border-radius: 8px;
+    font-size: 1.1em;
+    cursor: pointer;
+}
+
+.scene-button:hover {
+    background: #666;
+}
+
 </style>
 
 </head>
@@ -45,171 +131,216 @@ button {
 
 <summary>🎲 Session 11</summary>
 
-
 <details>
 
 <summary>📍 Wave Echo Cave</summary>
 
-<button onclick="changeScene('images/locations/wave_echo_cave.jfif')">
+<h3>📝 Basic Features</h3>
+
+<div class="notes">
+
+<ul>
+
+<li>Sound of  waves echoes through the mineevery 3-4mins. Get louder towards NW</li>
+
+<li>Ceilings: Tunnels: 10ft Rooms:20ft Caverns:30ft</li>
+
+<li>Doors: 6 feet tall, 4 feet wide, and made of six-inch-thick cut slabs of stone fitted with iron handles and hinges. The doors are low and wide—perfect for dwarves.</li>
+
+<li>Doors: Light. None unless otherwise indicated.</li>
+
+<li> Stalagmites: Found in many of the natural caverns, these spires of rock rise up from the floor and can be used for cover</li>
+
+</ul>
+
+</div>
+
+<button class="scene-button" onclick="changeScene('images/locations/wave_echo_cave.jfif')">
 Wave Echo Cave
 </button>
 
-<button onclick="changeScene('images/environments/_cave.webp')">
+<button class="scene-button" onclick="changeScene('images/locations/underdark_enterance.jfif')">
+Underdark Enterance
+</button>
+
+<button class="scene-button" onclick="changeScene('images/environments/_cave.webp')">
 Cave
 </button>
 
-<button onclick="changeScene('images/environments/tunnel.jpg')">
+<button class="scene-button" onclick="changeScene('images/environments/tunnel.jp         g')">
 Tunnel
 </button>
 
 
-<h4>👹 Encounters</h4>
+<h3>👹 Monsters</h3>
 
-<button onclick="changeScene('images/monsters/_kobold.jpg')">
+<button class="scene-button" onclick="changeScene('images/monsters/_kobold.jpg')">
 Kobold
 </button>
 
-<button onclick="changeScene('images/monsters/_stirge.jpg')">
+<button class="scene-button" onclick="changeScene('images/monsters/_stirge.jpg')">
 Stirge
 </button>
 
 
-<h4>🧑 NPCs</h4>
+<h3>👤 NPCs</h3>
 
+<h3>💎 Items</h3>
 
 </details>
+
+<hr>
 
 <details>
 
 <summary>📍 Gnomengarde</summary>
 
-<button onclick="changeScene('images/locations/gnomengarde.webp')">
+<button class="scene-button" onclick="changeScene('images/locations/gnomengarde.webp')">
 Gnomengarde
 </button>
 
-<h4>👹 Encounters</h4>
+<h3>👹 Encounters</h3>
+    
+<h3>🧑 NPCs</h3>
 
-<h4>🧑 NPCs</h4>
-
-<button onclick="changeScene('images/npcs/nixie_mum.jpg')">
+<button class="scene-button" onclick="changeScene('images/npcs/nixie_mum.jpg')">
 Nixie's Mum
 </button>
 
 </details>
 
+<hr>
 
 </div>
 
-</details>
-    
-
 <details>
 
-<summary>🎲 Session 12</summary>
-
+<summary>🎲 Session XX</summary>
 
 <details>
 
 <summary>📍 Location 1</summary>
 
+<button class="scene-button" onclick="changeScene('images/locations/example.jpg')">
+Location Name
+</button>
 
-<h4>📍 Location</h4>
+<button class="scene-button" onclick="changeScene('images/environments/example.jpg')">
+Environment Name
+</button>
 
-<!-- Location image buttons go here -->
-
-
-<h4>🌎 Environment</h4>
-
-<!-- Environment buttons go here -->
-
-
-<h4>👹 Encounters</h4>
-
-<!-- Monster buttons go here -->
+<button class="scene-button" onclick="changeScene('images/environments/example.jpg')">
+Environment Name
+</button>
 
 
-<h4>👤 NPCs</h4>
+<h3>👹 Monsters</h3>
 
-<!-- NPC buttons go here -->
+<button class="scene-button" onclick="changeScene('images/monsters/example.jpg')">
+Monster Name
+</button>
 
 
-<h4>💎 Items</h4>
+<h3>👤 NPCs</h3>
 
-<!-- Item buttons go here -->
+<button class="scene-button" onclick="changeScene('images/NPCs/example.jpg')">
+NPC Name
+</button>
 
+
+<h3>💎 Items</h3>
+
+<button class="scene-button" onclick="changeScene('images/items/example.jpg')">
+Item Name
+</button>
 
 </details>
 
-
+<hr>
 
 <details>
 
 <summary>📍 Location 2</summary>
 
+<button class="scene-button" onclick="changeScene('images/locations/example.jpg')">
+Location Name
+</button>
 
-<h4>📍 Location</h4>
+<button class="scene-button" onclick="changeScene('images/environments/example.jpg')">
+Environment Name
+</button>
 
-<!-- Location image buttons go here -->
-
-
-<h4>🌎 Environment</h4>
-
-<!-- Environment buttons go here -->
-
-
-<h4>👹 Encounters</h4>
-
-<!-- Monster buttons go here -->
+<button class="scene-button" onclick="changeScene('images/environments/example.jpg')">
+Environment Name
+</button>
 
 
-<h4>👤 NPCs</h4>
+<h3>👹 Monsters</h3>
 
-<!-- NPC buttons go here -->
+<button class="scene-button" onclick="changeScene('images/monsters/example.jpg')">
+Monster Name
+</button>
 
 
-<h4>💎 Items</h4>
+<h3>👤 NPCs</h3>
 
-<!-- Item buttons go here -->
+<button class="scene-button" onclick="changeScene('images/NPCs/example.jpg')">
+NPC Name
+</button>
 
+
+<h3>💎 Items</h3>
+
+<button class="scene-button" onclick="changeScene('images/items/example.jpg')">
+Item Name
+</button>
 
 </details>
 
-
+<hr>
 
 <details>
 
 <summary>📍 Location 3</summary>
 
+<button class="scene-button" onclick="changeScene('images/locations/example.jpg')">
+Location Name
+</button>
 
-<h4>📍 Location</h4>
+<button class="scene-button" onclick="changeScene('images/environments/example.jpg')">
+Environment Name
+</button>
 
-<!-- Location image buttons go here -->
-
-
-<h4>🌎 Environment</h4>
-
-<!-- Environment buttons go here -->
-
-
-<h4>👹 Encounters</h4>
-
-<!-- Monster buttons go here -->
+<button class="scene-button" onclick="changeScene('images/environments/example.jpg')">
+Environment Name
+</button>
 
 
-<h4>👤 NPCs</h4>
+<h3>👹 Monsters</h3>
 
-<!-- NPC buttons go here -->
+<button class="scene-button" onclick="changeScene('images/monsters/example.jpg')">
+Monster Name
+</button>
 
 
-<h4>💎 Items</h4>
+<h3>👤 NPCs</h3>
 
-<!-- Item buttons go here -->
+<button class="scene-button" onclick="changeScene('images/NPCs/example.jpg')">
+NPC Name
+</button>
 
+
+<h3>💎 Items</h3>
+
+<button class="scene-button" onclick="changeScene('images/items/example.jpg')">
+Item Name
+</button>
 
 </details>
 
-
 </details>
+    
+
 
 <hr>
 
@@ -221,15 +352,15 @@ Nixie's Mum
 
 <summary>📍 Locations</summary>
 
-<button onclick="changeScene('images/locations/wave_echo_cave.jfif')">
+<button class="scene-button" onclick="changeScene('images/locations/wave_echo_cave.jfif')">
 Wave Echo Cave
 </button>
 
-<button onclick="changeScene('images/locations/gnomengarde.webp')">
+<button class="scene-button" onclick="changeScene('images/locations/gnomengarde.webp')">
 Gnomengarde
 </button>
 
-<button onclick="changeScene('images/locations/swordcoast_map.jpg')">
+<button class="scene-button" onclick="changeScene('images/locations/swordcoast_map.jpg')">
 Sword Coast Map
 </button>
 
@@ -245,12 +376,28 @@ Sword Coast Map
 
 <summary>🌎 Environments</summary>
 
-<button onclick="changeScene('images/environments/_cave.webp')">
+<button class="scene-button" onclick="changeScene('images/environments/_cave.webp')">
 Cave
 </button>
 
-<button onclick="changeScene('images/environments/tunnel.jpg')">
+<button class="scene-button" onclick="changeScene('images/environments/tunnel.jpg')">
 Tunnel
+</button>
+
+<button class="scene-button" onclick="changeScene('images/environments/campfire_night.jpeg')">
+Campfire at Night
+</button>
+
+<button class="scene-button" onclick="changeScene('images/environments/farm_road.jpeg')">
+Farm Road
+</button>
+
+<button class="scene-button" onclick="changeScene('images/environments/forest_road.jpg')">
+Forest Road
+</button>
+
+<button class="scene-button" onclick="changeScene('images/environments/mountain_road.jpg')">
+Mountain Road
 </button>
 
 </details>
@@ -265,15 +412,313 @@ Tunnel
 
 <summary>👹 Monsters</summary>
 
-<button onclick="changeScene('images/monsters/_kobold.jpg')">
-Kobold
+<input 
+type="text" 
+id="monsterSearch" 
+placeholder="🔍 Search monsters..."
+onkeyup="searchMonsters()">
+
+<details class="monster">
+
+<summary>Kobolds</summary>
+
+<button class="scene-button" onclick="changeScene('images/monsters/_kobold.jpg')">
+Basic Kobold 
 </button>
 
-<button onclick="changeScene('images/monsters/_stirge.jpg')">
-Stirge
+
+<details>
+
+<summary>🧠 Legends and Lore</summary>
+
+<p>
+
+<strong>DC 10</strong><br>
+Kobolds are distant relatives of dragons and often serve them in their lairs.
+
+</p>
+
+<p>
+
+<strong>DC 15</strong><br>
+Kobolds go to great lengths to avoid sunlight.
+
+</p>
+
+<p>
+
+<strong>DC 20</strong><br>
+ While individually weak, kobolds can be dangerous when encountered in large numbers. They fashion clever traps to protect their underground warrens.
+
+</p>
+
+<strong>Names</strong><br>
+Blimbik, Flaw, Lublub, Luckluck, Pip Nip, Queek, Skirn, Vis, Zabblescrubble, Zorna
+
+</details> 
+
+<details>
+
+<summary>🎭 General Behaviour</summary>
+
+<table>
+
+<tr>
+<td>1</td>
+<td>Attack on sight; armed with vials of acid or
+alchemist’s fire</td>
+</tr>
+
+<tr>
+<td>2</td>
+<td>Attack on sight; armed with a jar of scorpions,
+snakes, or green slime</td>
+</tr>
+
+<tr>
+<td>3</td>
+<td>Suspicious of strangers; may have set ball
+bearings, caltrops, or hunting traps</td>
+</tr>
+
+<tr>
+<td>4</td>
+<td>Running with sacks of stolen food</td>
+</tr>
+
+<tr>
+<td>5</td>
+<td>Peeking from behind cover, such as high in a
+tree, behind a wall, or inside an abandoned
+building</td>
+</tr>
+
+<tr>
+<td>6</td>
+<td>Arguing over the proper way to roll a
+boulder onto intruders</td>
+</tr>
+
+<tr>
+<td>7</td>
+<td>Digging a pit trap</td>
+</tr>
+
+<tr>
+<td>8</td>
+<td>Hiding in ambush, disguised as bushes or
+rocks that occasionally move around</td>
+</tr>
+
+<tr>
+<td>9</td>
+<td>Bearing a message from their overlord</td>
+</tr>
+
+<tr>
+<td>10</td>
+<td>Guarding a high position such as a ledge
+or balcony</td>
+</tr>
+
+<tr>
+<td>11</td>
+<td>Terrified and hiding in a hole or inside burlap
+sacks, or just lying down covering their eyes</td>
+</tr>
+
+<tr>
+<td>12</td>
+<td> Fleeing from a battle in which their companions were killed</td>
+</tr>
+
+</table>
+
+</details>
+
+
+<details>
+
+<summary>🐾 Signs</summary>
+
+<table>
+
+<tr>
+<td>1-3</td>
+<td>DC 12 Perception check: small footprints</td>
+</tr>
+
+<tr>
+<td>4</td>
+<td>Abandoned campfire with dirt kicked over it</td>
+</tr>
+
+<tr>
+<td>5</td>
+<td>Several fresh kobold corpses, savaged by
+some beast</td>
+</tr>
+
+<tr>
+<td>6</td>
+<td>A dragon scale, pierced as if once part of a
+necklace</td>
+</tr>
+
+<tr>
+<td>7</td>
+<td>DC 12 Perception check: A concealed
+entrance to a narrow tunnel</td>
+</tr>
+
+<tr>
+<td>8</td>
+<td>Caltrops, tripwire that tips a torch into a
+puddle of oil, or other traps</td>
+</tr>
+
+<tr>
+<td>9</td>
+<td>Small footprints pass over a concealed pit
+trap that collapses beneath 80 or more
+pounds of weight</td>
+</tr>
+
+<tr>
+<td>10</td>
+<td>Hidden kobold sentry</td>
+</tr>
+
+</table>
+
+</details>
+
+
+<details>
+
+<summary>⚔️ Combat</summary>
+
+<p>
+
+<strong> Nothing</strong>
+
+</p>
+
+</details>
+
+</details>
+
+
+<details class="monster">
+
+<summary> Stirges</summary>
+
+<button class="scene-button" onclick="changeScene('images/monsters/_stirge.jpg')">
+Stirge 
 </button>
 
-<button onclick="changeScene('images/monsters/white_dragon.png')">
+
+
+<details>
+
+<summary>🧠 Legends and Lore</summary>
+
+<p>
+
+<strong>DC 10</strong><br>
+A stirge looks something like a four-winged bat crossed with a giant mosquito. Stirges latch onto their victims and drain their blood using their long proboscises.
+
+</p>
+
+<p>
+
+<strong>DC 15</strong><br>
+In small numbers, stirges don’t pose much of a threat. There’s a reason, however, that a flock of stirges is referred to as a plague.
+
+</p>
+
+</details> 
+
+
+<details>
+
+<summary>🎭 General Behaviour</summary>
+
+<table>
+
+<tr>
+<td>1-2</td>
+<td>As travelers approach, they take wing and attack</td>
+</tr>
+
+<tr>
+<td>3</td>
+<td>Swarming a large, panicked animal </td> 
+</tr>
+
+<tr>
+<td>4</td>
+<td>Drowsy and sated with blood; they attack only if approached</td>
+</tr>
+
+</table>
+
+</details>
+
+
+<details>
+
+<summary>🐾 Signs</summary>
+
+<table>
+
+<tr>
+<td>1-2</td>
+<td>An animal or humanoid corpse drained of blood</td>
+</tr>
+
+<tr>
+<td>3</td>
+<td>A distant humming sound</td>
+</tr>
+
+<tr>
+<td>4</td>
+<td>Several fresh kobold corpses, savaged by
+some beast</td>
+</tr>
+
+<tr>
+<td>6</td>
+<td>What looks like a cloud of bats darkening the
+sky. DC 13 Perception check: they have too
+many wings</td>
+</tr>
+
+</table>
+
+</details>
+
+
+<details>
+
+<summary>⚔️ Combat</summary>
+
+<p>
+
+<strong> A flock of stirges doesn’t focus on a single target,
+but spreads out to attack all nearby creatures. A
+stirge retreats only when sated with blood. </strong>
+
+</p>
+
+</details>
+
+</details>
+
+</details>
+
+<button class="scene-button" onclick="changeScene('images/monsters/white_dragon.png')">
 White Dragon
 </button>
 
@@ -289,12 +734,24 @@ White Dragon
 
 <summary>👤 NPCs</summary>
 
-<button onclick="changeScene('images/npcs/devil.png')">
+<button class="scene-button" onclick="changeScene('images/npcs/devil.png')">
 Chancellor Lazivos
 </button>
 
-<button onclick="changeScene('images/npcs/nixie_mum.jpg')">
+<button class="scene-button" onclick="changeScene('images/npcs/nixie_mum.jpg')">
 Nixie's Mum
+</button>
+
+<button class="scene-button" onclick="changeScene('images/npcs/captain_rand.png')">
+Captain Randwulf Thorncrest
+</button>
+
+<button class="scene-button" onclick="changeScene('images/npcs/jim_jar.png')">
+Jim Jar
+</button>
+
+<button class="scene-button" onclick="changeScene('images/npcs/tarran.png')">
+Taran
 </button>
 
 </details>
@@ -350,6 +807,28 @@ function changeScene(image){
 }
 
 window.changeScene = changeScene;
+
+
+function searchMonsters() {
+
+let input = document.getElementById("monsterSearch");
+let filter = input.value.toLowerCase();
+
+let monsters = document.querySelectorAll(".monster");
+
+monsters.forEach(function(monster) {
+
+let name = monster.innerText.toLowerCase();
+
+if (name.includes(filter)) {
+    monster.style.display = "";
+} else {
+    monster.style.display = "none";
+}
+
+});
+
+}
 
 
 </script>
