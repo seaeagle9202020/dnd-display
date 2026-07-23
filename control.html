@@ -115,6 +115,20 @@ details details {
     background: #666;
 }
 
+.monster-button {
+background: #222;
+    color: #ddd;
+    border: 1px solid #666;
+    padding: 8px 14px;
+    margin: 4px;
+    border-radius: 12px;
+    font-size: 15px;
+}
+
+.monster-button:hover {
+    background-color: #666;
+}
+
 </style>
 
 </head>
@@ -143,6 +157,8 @@ details details {
 
 <li>Sound of  waves echoes through the mineevery 3-4mins. Get louder towards NW</li>
 
+<li>Every new room: 17-20 Bell Rings li>
+
 <li>Ceilings: Tunnels: 10ft Rooms:20ft Caverns:30ft</li>
 
 <li>Doors: 6 feet tall, 4 feet wide, and made of six-inch-thick cut slabs of stone fitted with iron handles and hinges. The doors are low and wide—perfect for dwarves.</li>
@@ -159,7 +175,7 @@ details details {
 Wave Echo Cave
 </button>
 
-<button class="scene-button" onclick="changeScene('images/locations/underdark_enterance.jfif')">
+<button class="scene-button" onclick="changeScene('images/locations/underdark_enterance.jpg')">
 Underdark Enterance
 </button>
 
@@ -167,21 +183,24 @@ Underdark Enterance
 Cave
 </button>
 
-<button class="scene-button" onclick="changeScene('images/environments/tunnel.jp         g')">
-Tunnel
+<button class="scene-button" onclick="changeScene('images/environments/tunnel.jpg')">
+Underdark Tunnel
 </button>
 
 
 <h3>👹 Monsters</h3>
 
-<button class="scene-button" onclick="changeScene('images/monsters/_kobold.jpg')">
-Kobold
+<button class="monster-button" onclick="openMonster('kobold')">
+Kobolds
 </button>
 
-<button class="scene-button" onclick="changeScene('images/monsters/_stirge.jpg')">
-Stirge
+<button class="monster-button" onclick="openMonster('stirges')">
+Stirges
 </button>
 
+<button class="monster-button" onclick="openMonster('boggard')">
+Boggards
+</button>
 
 <h3>👤 NPCs</h3>
 
@@ -236,14 +255,14 @@ Environment Name
 
 <h3>👹 Monsters</h3>
 
-<button class="scene-button" onclick="changeScene('images/monsters/example.jpg')">
+<button class="monster-button" onclick="openMonster('example-monster')">
 Monster Name
 </button>
 
 
 <h3>👤 NPCs</h3>
 
-<button class="scene-button" onclick="changeScene('images/NPCs/example.jpg')">
+<button class="scene-button" onclick="openMonster('example-npc')">
 NPC Name
 </button>
 
@@ -277,7 +296,7 @@ Environment Name
 
 <h3>👹 Monsters</h3>
 
-<button class="scene-button" onclick="changeScene('images/monsters/example.jpg')">
+<button class="monster-button" onclick="openMonster('example-monster')">
 Monster Name
 </button>
 
@@ -318,7 +337,7 @@ Environment Name
 
 <h3>👹 Monsters</h3>
 
-<button class="scene-button" onclick="changeScene('images/monsters/example.jpg')">
+<button class="monster-button" onclick="openMonster('example-monster')">
 Monster Name
 </button>
 
@@ -381,7 +400,7 @@ Cave
 </button>
 
 <button class="scene-button" onclick="changeScene('images/environments/tunnel.jpg')">
-Tunnel
+Underdark Tunnel
 </button>
 
 <button class="scene-button" onclick="changeScene('images/environments/campfire_night.jpeg')">
@@ -408,24 +427,25 @@ Mountain Road
 
 <div class="category">
 
-<details>
+<details id="monster-library">
 
 <summary>👹 Monsters</summary>
 
 <input 
-type="text" 
-id="monsterSearch" 
+id="monsterSearch"
+type="text"
 placeholder="🔍 Search monsters..."
 onkeyup="searchMonsters()">
 
-<details class="monster">
+<div id="monster-list">
+
+<details class="monster" id="kobold">
 
 <summary>Kobolds</summary>
 
 <button class="scene-button" onclick="changeScene('images/monsters/_kobold.jpg')">
 Basic Kobold 
 </button>
-
 
 <details>
 
@@ -593,7 +613,6 @@ pounds of weight</td>
 
 </details>
 
-
 <details>
 
 <summary>⚔️ Combat</summary>
@@ -604,20 +623,225 @@ pounds of weight</td>
 
 </p>
 
+
+</details>
+
+</details>
+
+<details class="monster" id="white-dragon">
+
+<summary>White Dragon</summary>
+
+<button class="scene-button" onclick="changeScene('images/monsters/white_dragon.png')">
+White Dragon
+</button>
+
+<details>
+
+<summary>🧠 Legends and Lore</summary>
+
+<p>
+
+<strong>DC 10</strong><br>
+TEST
+</p>
+
+</details>
+
+<details>
+
+<summary>🎭 General Behaviour</summary>
+
+</details>
+
+<details>
+
+<summary>🐾 Signs</summary>
+
+</details>
+
+<details>
+
+<summary>⚔️ Combat</summary>
+
+<p>
+
+<strong> TEST </strong>
+
+</p>
+
 </details>
 
 </details>
 
 
-<details class="monster">
+<details class="monster" id="boggard">
 
-<summary> Stirges</summary>
+<summary>Boggard</summary>
 
+<button class="scene-button" onclick="changeScene('images/monsters/boggard_1.png')">
+    Boggard
+</button>
+
+<button class="scene-button" onclick="changeScene('images/monsters/boggard.jfif')">
+    Boggard Sovereign
+</button>
+
+<details>
+
+<summary>🧠 Legends and Lore</summary>
+
+<p>
+
+<strong>DC 10</strong><br>
+Boggards are arrogant humanoids
+constantly seeking to expand their territory.
+Like the frogs they resemble, boggards can
+jump incredible distances.
+</p>
+
+<p>
+
+<strong>DC 15/strong><br>
+Bribes or flattery can sometimes appease
+a boggard leader
+</p>
+
+<p>
+
+<strong>DC 20</strong><br>
+Some boggards worship demons or other
+supernatural entities. These mysterious patrons
+grant their servants the ability to summon froglike guardians.
+</p>
+
+</details>
+
+<details>
+
+<summary>🎭 General Behaviour</summary>
+
+<table>
+
+<tr>
+<td>1</td>
+<td>Scouting for an upcoming raid</td>
+</tr>
+
+<tr>
+<td>2</td>
+<td>Returning to their camp with a recently
+captured prisoner</td>
+</tr>
+
+<tr>
+<td>3</td>
+<td>Preparing a sacrifice to their fiendish patron</td>
+
+</tr>
+
+<tr>
+<td>4</td>
+<td>Transporting an offering of stolen goods to
+the boggard emperor</td>
+</tr>
+
+<tr>
+<td>5</td>
+<td>Two groups of boggards engaged in a border
+dispute</td>
+</tr>
+
+<tr>
+<td>6</td>
+<td>A peaceful tribe seeking new territory after
+a drought devastated their homeland</td>
+</tr>
+
+</table>
+
+
+</details>
+
+<details>
+
+<summary>🐾 Signs</summary>
+
+<table>
+
+<tr>
+<td>1</td>
+<td>Clouds of swarming flies</td>
+</tr>
+
+<tr>
+<td>2</td>
+<td>A chorus of croaking that penetrates even
+plugged ears; non-frog and non-boggard
+creatures that take a long rest in the area
+must make a DC 10 Constitution saving
+throw or gain no benefit from the rest</td>
+</tr>
+
+<tr>
+<td>3</td>
+<td>Webbed footprints in the muck; some of the
+tracks were made by giant frogs, but other
+creatures walked uprigh</td>
+</tr>
+
+<tr>
+<td>4</td>
+<td>A menhir carved with images of frogheaded demons</td>
+</tr>
+
+</table>
+
+</details>
+
+<details>
+
+<summary>⚔️ Combat</summary>
+
+
+<details>   
+<summary><strong> Regular</strong></summary>
+<p>
+The boggard uses Vaulting Leap to move around
+whenever it’s not sneaking, essentially doubling its
+movement speed. When attacking, it uses Vaulting
+Leap to close with its enemies and deliver a powerful
+spear attack. While next to a foe, it uses its more
+accurate bite attack. Once a group of boggards
+have been reduced to half their number, they retreat,
+trusting in their stealth to escape.
+</p>
+</details>
+
+<details>   
+<summary><strong> Sovereign</strong></summary>
+<p>
+The boggard sovereign prefers to stay out of melee
+range, often leaping onto high and hard-to-reach
+places. It uses Earthshaking Croak, Incite Frenzy,
+and Summon Frog Guardians from a distance. If
+forced into melee, it attacks with its parting bite.
+If this attack hits, it hops away.
+</p>
+</details>
+
+</details>
+
+</details>
+
+
+
+<details class="monster" id="stirges">
+
+<summary>Stirges</summary>
 <button class="scene-button" onclick="changeScene('images/monsters/_stirge.jpg')">
 Stirge 
 </button>
-
-
 
 <details>
 
@@ -638,7 +862,6 @@ In small numbers, stirges don’t pose much of a threat. There’s a reason, how
 </p>
 
 </details> 
-
 
 <details>
 
@@ -716,13 +939,10 @@ stirge retreats only when sated with blood. </strong>
 
 </details>
 
-</details>
-
-<button class="scene-button" onclick="changeScene('images/monsters/white_dragon.png')">
-White Dragon
-</button>
+</div>
 
 </details>
+
 
 </div>
 
@@ -808,28 +1028,74 @@ function changeScene(image){
 
 window.changeScene = changeScene;
 
+let monsterList = document.getElementById("monster-list");
+
+if (monsterList) {
+
+    let monsters = Array.from(
+        monsterList.querySelectorAll(".monster")
+    );
+
+    monsters.sort(function(a, b) {
+
+        let nameA = a.querySelector("summary").textContent.trim();
+        let nameB = b.querySelector("summary").textContent.trim();
+
+        return nameA.localeCompare(nameB);
+
+    });
+
+    monsters.forEach(function(monster) {
+        monsterList.appendChild(monster);
+    });
+
+}
 
 function searchMonsters() {
 
-let input = document.getElementById("monsterSearch");
-let filter = input.value.toLowerCase();
+    let input = document.getElementById("monsterSearch");
+    let filter = input.value.toLowerCase();
 
-let monsters = document.querySelectorAll(".monster");
+    let monsters = document.querySelectorAll(".monster");
 
-monsters.forEach(function(monster) {
+    monsters.forEach(function(monster) {
 
-let name = monster.innerText.toLowerCase();
+        let name = monster.querySelector("summary").textContent.toLowerCase();
 
-if (name.includes(filter)) {
-    monster.style.display = "";
-} else {
-    monster.style.display = "none";
+        if (name.includes(filter)) {
+            monster.style.display = "";
+        } else {
+            monster.style.display = "none";
+        }
+
+    });
+
+}
+window.searchMonsters = searchMonsters;
+
+
+function openMonster(id) {
+
+    let monster = document.getElementById(id);
+    let library = document.getElementById("monster-library");
+
+    if (library) {
+        library.open = true;
+    }
+
+    if (monster) {
+
+        monster.open = true;
+
+        monster.scrollIntoView({
+            behavior: "smooth"
+        });
+
+    }
+
 }
 
-});
-
-}
-
+window.openMonster = openMonster;
 
 </script>
 
